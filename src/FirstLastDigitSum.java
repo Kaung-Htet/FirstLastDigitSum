@@ -1,17 +1,18 @@
 public class FirstLastDigitSum {
     public static int sumFirstAndLastDigit(int number){
+        //check negative or positive
         if (number < 0){
             return -1;
         }
 
-        int firstNum = 0;
-        while (number >9){
-            number /= 10;
+        //find last number
+        int lastNum = number % 10;
+        //use while loop to check first number
+        int firstNum = number;
+        while (firstNum >9){
+            firstNum /= 10;
         }
-        System.out.println("First number is " + number);
-        return number;
-
-
+        return firstNum + lastNum;
     }
 }
 
